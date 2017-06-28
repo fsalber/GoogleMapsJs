@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Florian SALBER - Google Maps JS</title>
+
+	<!-- * CSS SCRIPT HERE * -->
+	<style type="text/css">
+		.google-map {
+		    height: 300px;
+		}
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+	<div class="page-header">
+	  <h1>Google Maps JS <small>Florian SALBER</small></h1>
+	</div>
+
+	<div class="google-map" data-marker="true" data-marker-icon="map-marker.png" data-center-lat="47.85773" data-center-lng="7.051897" data-zoom="16"></div>
+
+	<div class="page-header">
+		<h1>Comment utiliser ce script ?</h1>
+	</div>
+
+	<p>Il est nécéssaire d'importer dans son code le script inclut dans le fichier <kbd>maps.js</kbd></p>
+	<p>Ensuite, il faut configurer ce script dans son code. Il faut simplement rajouter la ligne suivante :<br/><br/><code>&lt;div class="google-map" data-marker="TRUE/FALSE" data-marker-icon="MARKER FILE" data-center-lat="XX.XXXX" data-center-lng="XX.XXXX" data-zoom="XX"&gt;&lt;/div&gt;</code><br/><br/></p>
+	<p>Vous trouverez plusieurs points de configuration :
+		<ul>
+			<li><kbd>bool</kbd> <b>data-marker</b> : Permet de modifier le marqueur Google Maps par défaut <kbd>option : true / false</kbd>.</li>
+			<li><kbd>string</kbd> <b>data-marker-icon</b> : Si <kbd>data-marker="true"</kbd>, indiquer le chemin vers le fichier image du marqueur.</li>
+			<li><kbd>float</kbd> <b>data-center-lat</b> : Latitude de l'emplacement à afficher.</li>
+			<li><kbd>float</kbd> <b>data-center-lng</b> : Longitude de l'emplacement à afficher.</li>
+			<li><kbd>float</kbd> <b>data-zoom</b> : valeur du zoom sur la carte.</li>
+		</ul>
+		Une fois cette configuration effectué, il faut définir une hauteur (height) afin d'afficher la carte. Dans cet exemple, la hauteur est défini dans la classe css <kbd>.google-map</kbd>.
+	</p>
+	<p>
+		<span class="text text-success"><b>BONUS</b></span>
+		Vous pouvez configurer la couleur via JavaScript.
+
+		Je ne détaillerais pas ce point, libre à vous de regarder le bout de code suivant :
+
+<pre>
+<code>
+window.mapStyleData = [
+    {
+        "featureType": "administrative",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "on"
+        },
+        {
+            "saturation": -100
+        },
+        {
+            "lightness": 20
+        }]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "on"
+        },
+        {
+            "saturation": -100
+        },
+        {
+            "lightness": 40
+        }]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "on"
+        },
+        {
+            "saturation": -10
+        },
+        {
+            "lightness": 30
+        }]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "simplified"
+        },
+        {
+            "saturation": -60
+        },
+        {
+            "lightness": 10
+        }]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "simplified"
+        },
+        {
+            "saturation": -60
+        },
+        {
+            "lightness": 60
+        }]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "off"
+        },
+        {
+            "saturation": -100
+        },
+        {
+            "lightness": 60
+        }]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+        {
+            "visibility": "off"
+        },
+        {
+            "saturation": -100
+        },
+        {
+            "lightness": 60
+        }]
+    }];
+</code>
+</pre>
+	</p>
+</div>
+
+<!-- * JS SCRIPT HERE * -->
+<script type="text/javascript" src="mootools.js"></script>
+<script type="text/javascript" src="maps.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
