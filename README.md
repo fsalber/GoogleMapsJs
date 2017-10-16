@@ -1,27 +1,42 @@
 
-# Comment utiliser ce script ?
+# GoogleMapJS
 
-Il est nécéssaire d'importer dans son code le script inclut dans le fichier <kbd>maps.js</kbd>
+A easy script to implement Google Maps into your website
 
-Ensuite, il faut configurer ce script dans son code. Il faut simplement rajouter la ligne suivante :
+### 1. Installation
 
-``` html 
+This script need Mootools to work. (jQuery like).
+
+First, clone this repo :
+
+```sh
+git clone https://github.com/fsalber/GoogleMapsJs.git
+```
+
+Import the "maps.js" file
+
+```html 
+<script type="text/javascript" src="YOURPATH/maps.js"></script>
+```
+
+Then, you have to call the "Google Map" from your HTML file
+
+```html 
 <div class="google-map" data-marker="TRUE/FALSE" data-marker-icon="MARKER FILE" data-center-lat="XX.XXXX" data-center-lng="XX.XXXX" data-zoom="XX"></div>
 ```
 
-Vous trouverez plusieurs points de configuration :
+Parameters :
+*   <kbd>bool</kbd> **data-marker** : Allow to use a custom marker icon <kbd>option : true / false</kbd>.
+*   <kbd>string</kbd> **data-marker-icon** : If <kbd>data-marker="true"</kbd>, put the marker icon path.
+*   <kbd>float</kbd> **data-center-lat** : Put the Lat. of your position
+*   <kbd>float</kbd> **data-center-lng** : Put the Lng. of your position
+*   <kbd>float</kbd> **data-zoom** : Define the zoom.
 
-*   <kbd>bool</kbd> **data-marker** : Permet de modifier le marqueur Google Maps par défaut <kbd>option : true / false</kbd>.
-*   <kbd>string</kbd> **data-marker-icon** : Si <kbd>data-marker="true"</kbd>, indiquer le chemin vers le fichier image du marqueur.
-*   <kbd>float</kbd> **data-center-lat** : Latitude de l'emplacement à afficher.
-*   <kbd>float</kbd> **data-center-lng** : Longitude de l'emplacement à afficher.
-*   <kbd>float</kbd> **data-zoom** : valeur du zoom sur la carte.
+You have to define a custom height to display the map. In my example the height is define into the "google-map" css class.
 
-Une fois cette configuration effectué, il faut définir une hauteur (height) afin d'afficher la carte. Dans cet exemple, la hauteur est défini dans la classe css <kbd>.google-map</kbd>.
+**BONUS** You can edit the map color. Feel free to take a look at the following code :
 
-**BONUS** Vous pouvez configurer la couleur via JavaScript. Je ne détaillerais pas ce point, libre à vous de regarder le bout de code suivant :
-
-``` js
+```js
 
 window.mapStyleData = [
     {
